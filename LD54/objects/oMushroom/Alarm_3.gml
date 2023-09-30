@@ -1,0 +1,2 @@
+/// @desc
+canjump = 1;

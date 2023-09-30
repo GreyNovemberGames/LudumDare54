@@ -1,0 +1,2 @@
+/// @desc
+canmove = 1;
