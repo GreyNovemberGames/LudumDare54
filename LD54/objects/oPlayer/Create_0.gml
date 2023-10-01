@@ -1,4 +1,8 @@
 /// @desc
+if (!instance_exists(oSpeech))
+	{
+		speech = instance_create_depth(x,y,depth -5, oSpeech);
+	}
 hp = 100;
 hitcd = 0;
 xprev = x;

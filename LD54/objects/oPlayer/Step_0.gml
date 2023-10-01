@@ -197,3 +197,12 @@ if (hp <=0)
 		if (alarm_get(4) = -1)
 			{alarm_set(4, 120);}
 	}
+	
+if (distance_to_object(oGate) <= 32)
+	{
+		if (oGate.image_index = 0)	
+		{
+		speech.sprite_index = sSpeechE;
+		speech.visible = true;
+		}
+	}
