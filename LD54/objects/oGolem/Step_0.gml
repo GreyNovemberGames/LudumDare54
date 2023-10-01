@@ -71,3 +71,20 @@ if (hsp > 0) {
 } else if (hsp < 0) {
     image_xscale = 1;
 }
+
+if (distance_to_object(oPlayer) <= 100) 
+{
+	if (sprite_index = sGolem)
+		{
+			if (!audio_is_playing(sGolemwalk))
+			{
+				audio_play_sound(sGolemwalk,1,0);
+				}
+		}
+	if (sprite_index = sGolemAttack)
+		{
+			if (!audio_is_playing(sGolemSlam))
+				{
+					audio_play_sound(sGolemSlam,1,0);}
+		}
+}

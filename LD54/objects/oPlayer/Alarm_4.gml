@@ -1,2 +1,2 @@
 /// @desc
-room_goto(GameOver);
+room_goto(rm_Gameover);

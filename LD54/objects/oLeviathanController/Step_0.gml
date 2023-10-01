@@ -2,7 +2,7 @@
 if (distance_to_object(oPlayer) <= 128 and alarm_get(0) <= 0)
 	{
 		alarm_set(0,random_range(64,96));
-	
+		audio_play_sound(sRoar,1,0);
 	}
 if (distance_to_object(oPlayer) <= 128 and alarm_get(1) <= 0)
 	{

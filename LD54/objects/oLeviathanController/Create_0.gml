@@ -1,3 +1,3 @@
 /// @desc
 chosenNode = 0;
-hp = 250;
+hp = 90;

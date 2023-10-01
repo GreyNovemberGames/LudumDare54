@@ -1,5 +1,5 @@
 /// @desc
-hp = 65;
+hp = 30;
 hitcd = 0;
 flashing = 0;
 grv = 1;

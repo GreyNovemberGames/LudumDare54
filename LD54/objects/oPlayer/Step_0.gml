@@ -49,6 +49,7 @@ if (place_meeting(x, y + 1, oBlock))
     if (key_jump)
     {
         // Perform the initial jump
+		audio_play_sound(sJump,1,0);
         vsp = jumpforce;
         grv = 0;
         alarm_set(0, 5);
@@ -57,6 +58,7 @@ if (place_meeting(x, y + 1, oBlock))
 else if (key_jump && !doubleJumped)
 {
     // Perform double jump
+	audio_play_sound(sJump,1,0);
     vsp = jumpforce;
     grv = 0;
     alarm_set(0, 5);
@@ -129,6 +131,7 @@ if (hp > 0)
 {
 if (mouse_check_button_pressed(mb_left) and attacking = false and dashing = false and diving = false and place_meeting(x, y + 1, oBlock)) 
 {
+	audio_play_sound(sAttack,1,0);
 	instance_create_depth(x * image_xscale + 1,y,depth - 1,oAttack)
 	attacking = true;
 }
@@ -136,9 +139,15 @@ if (mouse_check_button_pressed(mb_left) and attacking = false and dashing = fals
 //dashing
 if (mouse_check_button_pressed(mb_right) and attacking = false and dashing = false and diving = false) 
 {
+	if (candash = true)
+	{
+	audio_play_sound(sDash,1,0);
 	instance_create_depth(x * image_xscale + 1,y,depth,oDash)
 	hsp = (10 * image_xscale);
 	dashing = true;
+	candash = false;
+	alarm_set(6,120);
+	}
 	
 }
 if (dashing = true)
@@ -147,6 +156,7 @@ if (dashing = true)
 //diving
 if (mouse_check_button_pressed(mb_left) and attacking = false and dashing = false and diving = false and !place_meeting(x, y + 1, oBlock)) 
 {
+	audio_play_sound(sDive,1,0);
 	instance_create_depth(x * image_xscale + 1,y,depth,oDive)
 	vsp = 10;
 	diving = true;
@@ -193,7 +203,10 @@ if (vsp < 0)
 	//health
 if (hp <=0)
 	{
-		
+		if (alarm_get(4) = -1)
+		{
+			audio_play_sound(sCreaturedeath,1,0);
+		}
 		sprite_index = sPlayerDead;
 		if (alarm_get(4) = -1)
 			{alarm_set(4, 120);}
@@ -216,21 +229,45 @@ if (distance_to_object(oGate) <= 32)
 	}
 if (distance_to_object(oTip1) <= 16)
 	{
+		if (cantalk = 1)
+			{
+				audio_play_sound(sTalking,1,0);
+				cantalk = 0;
+				alarm_set(5,240);
+			}
 		speech.sprite_index = sSpeechSPC;
 		speech.visible = true;	
 	}
 if (distance_to_object(oTip2) <= 16)
 	{
+		if (cantalk = 1)
+			{
+				audio_play_sound(sTalking,1,0);
+				cantalk = 0;
+				alarm_set(5,240);
+			}
 		speech.sprite_index = sSpeechLMB;
 		speech.visible = true;	
 	}
 if (distance_to_object(oTip3) <= 16)
 	{
+		if (cantalk = 1)
+			{
+				audio_play_sound(sTalking,1,0);
+				cantalk = 0;
+				alarm_set(5,240);
+			}
 		speech.sprite_index = sSpeechRMB;
 		speech.visible = true;	
 	}
 if (distance_to_object(oTip4) <= 16)
 	{
+		if (cantalk = 1)
+			{
+				audio_play_sound(sTalking,1,0);
+				cantalk = 0;
+				alarm_set(5,240);
+			}
 		speech.sprite_index = sSpeechDive;
 		speech.visible = true;	
 	}

@@ -52,6 +52,7 @@ if (place_meeting(x, y + 1, oBlock))
     if (canjump = 1)
     {
         // Perform the initial jump
+		if (distance_to_object(oPlayer) <= 200) {audio_play_sound(sMush,1,0);}
 		hsp = hsp*3;
         vsp = jumpforce;
         grv = 0;

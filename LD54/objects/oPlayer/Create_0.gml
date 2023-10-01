@@ -19,3 +19,5 @@ attacking = false;
 diving = false;
 dashing = false;
 image_speed = 1;
+cantalk = 1;
+candash = true;
