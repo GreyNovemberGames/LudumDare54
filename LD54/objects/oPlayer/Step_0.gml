@@ -20,6 +20,7 @@ onLadder = place_meeting(x, y, oLadder);
 
 if (onLadder)
 {
+	
     if (key_up)
     {
         vsp = -walksp; // Climb up
@@ -136,7 +137,7 @@ if (mouse_check_button_pressed(mb_left) and attacking = false and dashing = fals
 if (mouse_check_button_pressed(mb_right) and attacking = false and dashing = false and diving = false) 
 {
 	instance_create_depth(x * image_xscale + 1,y,depth,oDash)
-	hsp = (20 * image_xscale);
+	hsp = (10 * image_xscale);
 	dashing = true;
 	
 }
@@ -181,11 +182,11 @@ if (vsp < 0)
 			sprite_index = sPlayerFall;
 			exit;
 		}
-	if (attacking = false and dashing = false and diving = false and hp > 0 and vsp = 0 and sprite_index != sPlayer)
+	if (attacking = false and dashing = false and diving = false and hp > 0 and vsp = 0 and onLadder=false and sprite_index != sPlayer)
 		{
 			sprite_index = sPlayer;
 		}
-		if (x = xprev)
+		if (x = xprev and sprite_index != sPlayerClimb)
 			{image_speed = 0; image_index = 0;}
 		else
 			{image_speed = 1;}
@@ -198,6 +199,13 @@ if (hp <=0)
 			{alarm_set(4, 120);}
 	}
 	
+if (place_meeting(x, y, oLadder))
+	{
+		sprite_index = sPlayerClimb;
+		image_speed = 1;
+	}
+	
+	
 if (distance_to_object(oGate) <= 32)
 	{
 		if (oGate.image_index = 0)	
@@ -205,4 +213,24 @@ if (distance_to_object(oGate) <= 32)
 		speech.sprite_index = sSpeechE;
 		speech.visible = true;
 		}
+	}
+if (distance_to_object(oTip1) <= 16)
+	{
+		speech.sprite_index = sSpeechSPC;
+		speech.visible = true;	
+	}
+if (distance_to_object(oTip2) <= 16)
+	{
+		speech.sprite_index = sSpeechLMB;
+		speech.visible = true;	
+	}
+if (distance_to_object(oTip3) <= 16)
+	{
+		speech.sprite_index = sSpeechRMB;
+		speech.visible = true;	
+	}
+if (distance_to_object(oTip4) <= 16)
+	{
+		speech.sprite_index = sSpeechDive;
+		speech.visible = true;	
 	}

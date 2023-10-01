@@ -30,5 +30,5 @@
     "path": "sprites/sMarker/sMarker.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
