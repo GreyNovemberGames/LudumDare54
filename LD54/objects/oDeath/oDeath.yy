@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oBlock",
+  "name": "oDeath",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
@@ -24,10 +24,10 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": true,
+  "solid": false,
   "spriteId": {
-    "name": "sBlock",
-    "path": "sprites/sBlock/sBlock.yy",
+    "name": "sDeath",
+    "path": "sprites/sDeath/sDeath.yy",
   },
   "spriteMaskId": null,
   "visible": false,
