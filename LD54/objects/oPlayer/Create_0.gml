@@ -1,5 +1,5 @@
 /// @desc
-hp = 25;
+hp = 100;
 hitcd = 0;
 xprev = x;
 yprev = y;

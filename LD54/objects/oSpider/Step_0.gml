@@ -37,3 +37,8 @@ else
     // Apply vertical
     y = y + vsp;
 }
+if (hsp > 0) {
+    image_xscale = -1;
+} else if (hsp < 0) {
+    image_xscale = 1;
+}
